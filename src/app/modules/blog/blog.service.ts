@@ -9,8 +9,18 @@ const getAllBlogsFromDB = async () => {
   const result = await Blog.find();
   return result;
 };
+const getSingleBlogFromDB = async (id: string) => {
+  const result = await Blog.findOne({ id });
+  return result;
+};
+const deleteSingleBlogFromDB = async (id: string) => {
+  const result = await Blog.deleteOne({ id });
+  return result;
+};
 
 export const BlogServices = {
   createBlogIntoDB,
   getAllBlogsFromDB,
+  getSingleBlogFromDB,
+  deleteSingleBlogFromDB,
 };
