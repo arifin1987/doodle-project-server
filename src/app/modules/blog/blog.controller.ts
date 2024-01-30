@@ -3,7 +3,7 @@ import { BlogServices } from './blog.service';
 
 const createBlog = async (req: Request, res: Response) => {
   try {
-    const { blog: blogData } = req.body;
+    const blogData = req.body;
 
     const result = await BlogServices.createBlogIntoDB(blogData);
     res.status(200).json({
